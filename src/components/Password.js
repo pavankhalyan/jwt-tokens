@@ -8,7 +8,7 @@ export default function Password() {
 
     const formik = useFormik({
         initialValues : {
-            Password:''
+            Password:'pavan@2004'
         },
         validate: passwordValidate,
         validateOnBlur: false,
@@ -32,11 +32,11 @@ export default function Password() {
             </div>            
             <form className='py-1' onSubmit={formik.handleSubmit}>
             <div className='textbox flex flex-col items-center gap-6' > 
-                 <input  {...formik.getFieldProps('password')} type='text' className='h-9 max-w-4xl w-3/4 shadow-lg '  placeholder='Password' /> 
+                 <input  {...formik.getFieldProps('password')} type='password' className='h-9 max-w-4xl w-3/4 shadow-lg '  placeholder='Password'/> 
                  <button type='submit' className='bg-slate-500 w-3/4 rounded- text-white text-xl shadow-sm text-center h-10 hover:bg-slate-950'> Sign In </button>
             </div>                       
             <div className='text-center py-4'> 
-            <span className='text-gray-400'> Forgot password <Link className= 'text-red-600 underline' to='/Recovery Now'> Recovery now </Link></span>           
+            <span className='text-gray-400'> Forgot password? <Link className= 'text-red-600 underline' to='/Recovery'> Recovery now </Link></span>           
             </div> 
             </form>
         </div>
