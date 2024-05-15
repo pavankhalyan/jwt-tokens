@@ -50,3 +50,23 @@ export async function resetPasswordValidate(values) {
     return errors;
 }
 
+export async function registerValidate(values) {
+    const errors = usernameVerify({}, values);
+    passwordVerify(errors,values);
+    emailVerify(errors,values);
+
+    return errors
+}
+
+function emailVerify(error={},values) {
+    if(!values.email) {
+        error.email = toast.error("email is required...!");
+    }else if(values.email.includes("")){
+        error.email = toast.error(" invalid email");
+    }else if ( !/\S+@\S+\.\S+/i.test(values.email)){
+        error.email = toast.error("invalid email address...!")
+    }
+
+    return error;
+        
+ }
