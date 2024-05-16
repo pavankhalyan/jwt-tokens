@@ -70,3 +70,20 @@ function emailVerify(error={},values) {
     return error;
         
  }
+
+
+ export async function firstnameValidate(values) {
+
+ }
+
+ function firstnameVerify(error={},values){
+
+ }
+
+export async function lastNameValidate(values) {
+
+}
+
+function lastNameVerify(error={},values){
+    
+}
