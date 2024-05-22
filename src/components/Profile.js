@@ -3,17 +3,19 @@ import { Link  } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { useFormik } from 'formik'
 import Username from './Username'
-import { registerValidate } from '../helper/Validate'
+import { profileValidate } from '../helper/Validate'
 
 export default function Register() {
 
     const formik = useFormik({
         initialValues : {
-            email: 'pavanusha2004@gmail.com',
-            username: 'pavankhalyan',
-            Password:'pavan@2004'
+          firstname:'',
+          lastname:'',
+          email: 'pavanusha2004@gmail.com',
+          mobile: '',
+          address:''
         },
-        validate: registerValidate,
+        validate: profileValidate,
         validateOnBlur: false,
         validateOnChange: false,
         onSubmit: async values => {
@@ -49,7 +51,7 @@ export default function Register() {
               </div> 
             </div>                       
             <div className='text-center py-4'> 
-            <span className='text-gray-400'> already register? <Link className= 'text-red-600 underline' to='/'> login now </Link></span>           
+            <span className='text-gray-400'> come back later? <button className= 'text-red-600 underline' to='/'> login now </button></span>           
             </div> 
             </form>
         </div>
