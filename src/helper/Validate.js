@@ -66,10 +66,8 @@ function emailVerify(error={},values) {
     }else if ( !/\S+@\S+\.\S+/i.test(values.email)){
         error.email = toast.error("invalid email address...!")
     }
-
-    return error;
-        
- }
+    return error;       
+}
 
 export async function profileValidate(values){
     const errors = emailVerify({},values);
